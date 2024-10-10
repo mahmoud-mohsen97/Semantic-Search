@@ -1,4 +1,4 @@
-# Semantic-Search-in-articles-using-ChromaDB
+# Semantic Search in articles using ChromaDB and Annoy
 ## Introduction:
 In this project, we aim to create a semantic search pipeline using the Chroma vector database to search for some words within English articles and extract hot keywords. Semantic search is essential for efficient information retrieval and has various real-world applications. 
 
