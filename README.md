@@ -8,9 +8,9 @@ The goal is to efficiently search for specific words within English articles and
 ### Workflow
 1. Pre-processing: Clean and standardize the text.
 2. Semantic Search Pipeline:
-  - Create a ChromaDB client and collection.
-  - Add documents to ChromaDB and query using vector search.
-  - Perform semantic searches and extract hot keywords.
+    - Create a ChromaDB client and collection.
+    - Add documents to ChromaDB and query using vector search.
+    - Perform semantic searches and extract hot keywords.
 3. Visualization: Generate a word cloud to visualize the frequent keywords in the articles.
 
 ### Results
@@ -25,8 +25,8 @@ This approach focuses on embedding-based search using Cohere’s multilingual mo
 ### Workflow
 1. Data Processing: The article is split into meaningful paragraphs, which are embedded into numerical vectors.
 2. Semantic Search Pipeline:
-  - Embed paragraphs using Cohere’s multilingual model.
-  - Build a vector search index using Annoy for fast retrieval of relevant chunks.
+    - Embed paragraphs using Cohere’s multilingual model.
+    - Build a vector search index using Annoy for fast retrieval of relevant chunks.
 3. Search Optimization: Integrating Cohere’s command-r-plus model for answer generation improves search precision in both Arabic and English.
 ### Results
 This approach successfully generated precise, context-aware answers and provided a better user experience for question-answering tasks based on the article.
