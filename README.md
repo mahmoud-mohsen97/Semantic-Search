@@ -1,34 +1,42 @@
-# Semantic Search in articles using ChromaDB
-## Introduction:
-In this project, we aim to create a semantic search pipeline using the Chroma vector database to search for some words within English articles and extract hot keywords. Semantic search is essential for efficient information retrieval and has various real-world applications. 
+# Semantic Search in Articles
 
-**Problem Description:**
+This project demonstrates building a semantic search pipeline to retrieve relevant information from English articles using vector embeddings. Traditional search methods rely on lexical matching, but semantic search leverages the meaning of words, enhancing the accuracy and relevance of search results. Two approaches are explored using ChromaDB and Cohere embeddings.
 
-The challenge is to efficiently search for specific words in articles and extract relevant keywords that capture the article's essence. The pipeline utilizes Chroma vectors to address this problem effectively.
-## Data Description:
-I made a data that consists of some articles in .txt format that talk about the services that a company offers in AI & DS fields 
-## Experiments:
-- Pre-processing: To prepare the articles for semantic search, we cleaned and standardized the text for improving the accuracy of the search results.
-- Semantic Search Pipeline : 
-  - Creating ChromaDB Client and Collection
-  - Adding Documents to ChromaDB and
-  - Querying
-  - Performing Semantic Searches
-  - Extracting Hot Keywords and plotting by Word cloud
+## Approach 1: Semantic Search with ChromaDB
+### Problem Description
+The goal is to efficiently search for specific words within English articles and extract relevant keywords. ChromaDB is used for vector-based search to improve the accuracy of information retrieval.
+### Workflow
+1. Pre-processing: Clean and standardize the text.
+2. Semantic Search Pipeline:
+  - Create a ChromaDB client and collection.
+  - Add documents to ChromaDB and query using vector search.
+  - Perform semantic searches and extract hot keywords.
+3. Visualization: Generate a word cloud to visualize the frequent keywords in the articles.
 
-## Optimization for Time Efficiency:
-We optimize the search process by using indexing techniques and efficient data structures. This ensures that the semantic search is performed with minimal time complexity.
-## Conclusion :
-Our semantic search pipeline successfully retrieves relevant articles based on specific keywords and then generates a word cloud visualization to highlight the most frequent words in each file's content 
+### Results
+The semantic search pipeline effectively retrieves relevant articles and highlights key concepts through word clouds. There is potential to enhance the output to generate summaries and more customized answers.
+### Tools
+- ChromaDB: Vector database for semantic search.
+- Sentence-transformers, nltk, WordCloud for pre-processing and visualization.
 
-**=> There is a need to enhance the information retrieval process where the output be a summary and more customized for the query**
+## Approach 2: Semantic Search with Cohere and Annoy
+### Problem Description
+This approach focuses on embedding-based search using Cohere’s multilingual model and Annoy for fast vector search within a pre-existing article.
+### Workflow
+1. Data Processing: The article is split into meaningful paragraphs, which are embedded into numerical vectors.
+2. Semantic Search Pipeline:
+  - Embed paragraphs using Cohere’s multilingual model.
+  - Build a vector search index using Annoy for fast retrieval of relevant chunks.
+3. Search Optimization: Integrating Cohere’s command-r-plus model for answer generation improves search precision in both Arabic and English.
+### Results
+This approach successfully generated precise, context-aware answers and provided a better user experience for question-answering tasks based on the article.
+### Tools
+- Cohere API for text embeddings and answer generation.
+- Annoy for fast vector search.
+- NumPy, python-dotenv for embedding handling.
 
-Potential Applications: The developed pipeline can be applied in diverse scenarios, from assisting researchers in literature review to helping businesses analyze textual data for insights for example ChatPDF
-## Tools and Resources:
-- 🏡 Home | Chroma (trychroma.com)
-- Sentence-transformers
-- nltk
-- Word cloud
-- The handmade data is included in the folder with this file
-## Challenges and Learnings:
-Understanding and implementing the vector database and finding a suitable way to extract the hot keywords 
+## Conclusion
+Both approaches effectively implemented semantic search in articles, with vector-based methods enhancing the search accuracy compared to traditional methods. ChromaDB offers fast search and keyword extraction, while Cohere and Annoy provide contextual search and precise answer generation, particularly useful in multilingual scenarios.
+## Tools and Resources
+- ChromaDB, Sentence-transformers, Cohere API, Annoy, WordCloud.
+- External resources: Chroma and Annoy documentation.
